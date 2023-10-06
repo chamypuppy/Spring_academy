@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 
+		#### bean 태그의 속성 >
+		#### 필수 속성: 
+		   - class: bean의 전체 경로, FQN
+		#### 선택 속성   
+		   - id: bean의 이름
+		   		 생략 시 클래스명에서 첫 글자가 소문자 된 bean명으로 지정	
+		   		 사용 시 에러 발생 가능성 多. **필수 사용 권장**
+		   - init-method: 객체 생성 후 멤버변수 초기화 작업에 사용되는 메서드인 
+		   				  init() 메서드를 오버라이딩하여 사용
+		   - destroy-method: 객체 소멸 전에 호출되는 메서드
+		   					 객체에서 사용한 자원을 해제할 때 사용
+		   - lazy-init: 스프링이 구동하는 시점에 bean을 생성할지, bean이 사용되기 전에 bean을 생성할지 여부 판단
+		   				DF값: false
+		   				```true``` : 빈 사용 전에 생성
+		   				```false``` : 스프링 구동되는 시점에 생성
+		   - scope: bean을 요청시마다 만들지	 ```prototype```
+		   			한 번만 만들어 사용할지 여부 판단 ```singleton```
+		   			DF값: singleton
+		   			
+	 -->
+
+	<!-- SamsungTV Bean 생성 -->
+	<!-- <bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod" lazy-init="true"/> -->
+	<!-- <bean id="tv" class="polymorphism.SamsungTV" scope="prototype"/> -->
+	<bean id="tv" class="polymorphism.SamsungTV"/>
+	
+	<!-- LgTV Bean 생성 -->
+	<!-- <bean id="tv" class="polymorphism.LgTV" /> -->
+	
+</beans>
